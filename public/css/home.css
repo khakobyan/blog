@@ -1,0 +1,47 @@
+.categories_headname {
+	margin-left: 105px;
+	/*color: red;*/
+}
+.add {
+	margin-left: 44%;
+}
+.list-group {
+	margin-top: 20px;
+}
+.all_posts_panel {
+	margin-top: 20px;
+	margin-left:15px;
+	width: 1100px;
+	height: 800px;
+}
+.post-panel {
+	margin-top: 20px;
+	/*margin-left: 5px;*/
+	/*margin-right: 5px;*/
+}
+.post-titles {
+	color: #404040;
+}
+
+.post-titles:hover {
+	transition: all 0.3s ease;
+	text-decoration: none;
+	color: black;
+
+}
+.add_post {
+	margin-left: 45%;
+}
+.post-list {
+	width: 800px;
+}
+
+.category-list {
+	width: 800px;
+}
+.post-edit-blade {
+	margin-bottom: 50px;
+}
+.categories-container {
+	margin-left: 20px;
+}
