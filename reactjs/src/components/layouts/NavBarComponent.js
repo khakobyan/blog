@@ -4,15 +4,12 @@ import NavBarGuestMenu  from "./NavBarGuestMenu";
 import { Link} from 'react-router-dom';
 
 export default class NavBarComponent extends Component{
-
     constructor(props){
         super(props);
     }
 
     render(){
-
         let menu = sessionStorage.getItem('id') ? <NavBarUserMenu />:<NavBarGuestMenu />;
-
         return (
             <nav className="navbar navbar-default navbar-static-top">
                 <div className="container">
@@ -40,6 +37,4 @@ export default class NavBarComponent extends Component{
             </nav>
         );
     }
-
 }
-

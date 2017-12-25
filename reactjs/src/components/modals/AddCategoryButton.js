@@ -19,7 +19,7 @@ export default class AddCategoryButton extends Component {
                                 <input className="btn btn-default col-sm-3" type="submit" value="Create" onClick={this.props.addCategory} data-dismiss="modal" />
                                 <div className="col-sm-6"></div>
                                 <button className="btn btn-default col-sm-3" type="button" data-dismiss="modal">Close</button>  
-                            </div>	
+                            </div>  
                         </div>
                     </div>
                 </div>

@@ -10,7 +10,7 @@ use App\User;
 class UsersController extends Controller
 {
     private $user;
-	public $successStatus = 200;
+    public $successStatus = 200;
     
     public function __construct(User $user)
     {
@@ -20,7 +20,7 @@ class UsersController extends Controller
 
     public function register(Request $request)
     {
-    	$inputs = $request->all();
+        $inputs = $request->all();
         $confirmation_code = str_random(30);
         $user = User::create([
             'name' => $inputs['name'],
@@ -39,7 +39,7 @@ class UsersController extends Controller
 
     public function login(Request $request)
     {
-    	if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
+        if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
             $user = Auth::user();
             $success['token'] =  $user->createToken('MyApp')->accessToken;
             return response()->json(['success' => $success, "user"=>$user], $this->successStatus);
@@ -57,8 +57,7 @@ class UsersController extends Controller
 
     public function details()
     {
-    	# code...
-    	$user = Auth::user();
+        $user = Auth::user();
         return response()->json(['success' => $user], $this->successStatus);
     }
 }

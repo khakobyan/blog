@@ -71,7 +71,7 @@ class PostController extends Controller
         
         if ($this->post->create($arr)) {
             return redirect('/home')->with('message','Post created');
-       }
+        }
     }
 
     /**
@@ -131,7 +131,7 @@ class PostController extends Controller
             $image_name = time().'.'.$image->getClientOriginalExtension();
             $image->move($path,$image_name);
         };
-        $arr=array(
+        $arr = array(
             'title' => $request->post_title,
             'text' => $request->post_text,
             'image_path'=>$image=isset($image_name)?$image_name:$default_image,
@@ -139,7 +139,6 @@ class PostController extends Controller
         );
         if ($request != null) {
             $post->update($arr);
-
             $post->save();
             return redirect('/home');
         }
@@ -166,7 +165,6 @@ class PostController extends Controller
             $post->delete();
             return redirect('/home');
         }
-
         return redirect()->back()->with('message','Something went wrong');
     }
 }

@@ -12,12 +12,12 @@ class CategoryController extends Controller
 {
     public function __construct()
     {
-       	$this->middleware('auth');
+        $this->middleware('auth');
     }
 
     public function index()
     {
-    	$categories = Category::get();
+        $categories = Category::get();
         return response()->json(['categories' => $categories], 200);
     }
 
@@ -37,9 +37,9 @@ class CategoryController extends Controller
 
         $category = Category::create($arr);
         if($category) {
-        	return response()->json(['category' => $category], 200);
+            return response()->json(['category' => $category], 200);
         }
-        	return response()->json(['message'=> 'error'], 400);
+        return response()->json(['message'=> 'error'], 400);
     }
     
     public function update(Request $request, $id)
@@ -60,7 +60,6 @@ class CategoryController extends Controller
             $category->delete();
             return response()->json(['success'], 200);
         }
-        	return response()->json(['message' => 'error'], 400);
+        return response()->json(['message' => 'error'], 400);
     }
-
 }

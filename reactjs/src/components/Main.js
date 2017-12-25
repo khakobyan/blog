@@ -18,9 +18,9 @@ export default class Main extends Component {
         let isLogged = localStorage.getItem('isLogged');
 
         if (isLogged == 1) {
-          isLogged = true;
+            isLogged = true;
         }else{
-          isLogged = false;
+            isLogged = false;
         }
 
         this.state = {
@@ -52,17 +52,16 @@ export default class Main extends Component {
         return (
             <HashRouter >
                 <div>
-                  <NavBarComponent isLogged={this.state.loggedIn}/>
-                  <hr/>
-                  <Route path="/login" component={Login}/>
-                  <Route path="/registration" component={Register}/>
-                  <Route path="/home" component={Home}/>
-                  <Route path="/me/categories" component={MyCategories} />
-                  <Route path="/me/posts" component={MyPosts} />
-                  <Route path="/posts/:id" component={ShowPost} />
+                    <NavBarComponent isLogged={this.state.loggedIn}/>
+                    <hr/>
+                    <Route path="/login" component={Login}/>
+                    <Route path="/registration" component={Register}/>
+                    <Route path="/home" component={Home}/>
+                    <Route path="/me/categories" component={MyCategories} />
+                    <Route path="/me/posts" component={MyPosts} />
+                    <Route path="/posts/:id" component={ShowPost} />
                 </div>
             </HashRouter>
-
         );
     }
 }

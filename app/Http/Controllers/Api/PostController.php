@@ -26,7 +26,7 @@ class PostController extends Controller
 
     public function allPosts()
     {
-    	$all_posts = Post::with('category')->get();
+        $all_posts = Post::with('category')->get();
         return response()->json(['posts' => $all_posts], 200);
     }
 
@@ -47,8 +47,8 @@ class PostController extends Controller
         );
         if ($this->post->create($inputs)) {
             return response()->json(['added_post' => $inputs], 201);
-       	}
-       	return response()->json(['error' => 'Something went wrong!'], 400);
+        }
+        return response()->json(['error' => 'Something went wrong!'], 400);
     }
 
     public function show($id)
@@ -84,7 +84,6 @@ class PostController extends Controller
         if ($post->image_path != $default_image) {
             File::delete($image_path);
         };
-
         if ($post != null) {
             $post->delete();
             return response()->json(['deleted_post_id' => $id], 200);

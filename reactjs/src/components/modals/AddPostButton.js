@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export default class AddPostButton extends Component {
-	render() {
-		return (
-			<div className="modal fade" id="add_post_modal" role="dialog" >
-				<div className="modal-dialog" role="document">
+    render() {
+        return (
+            <div className="modal fade" id="add_post_modal" role="dialog" >
+                <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="modal-body">
                             <label htmlFor="exampleInputEmail1">Add Post</label>
@@ -13,8 +13,8 @@ export default class AddPostButton extends Component {
                                 name={this.props.post_title} onChange={this.props.getPostTitle} required/><br/>
                             <textarea className="form-control" rows="6" value={this.props.post_text} onChange={this.props.getPostText} placeholder="Text"></textarea><br/>
                             <select onChange={this.props.changeSelect} value={this.props.selected_category} className="form-control">
-                            	<option>Select Category</option>
-                               	{
+                                <option>Select Category</option>
+                                {
                                     this.props.show_categories.map((value, index) => { 
                                         return (
                                             <option key={index} value={value.id}>{value.name}</option>
@@ -31,6 +31,6 @@ export default class AddPostButton extends Component {
                     </div>
                 </div>
             </div>
-		);
-	}
+        );
+    }
 }
