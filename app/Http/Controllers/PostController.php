@@ -32,9 +32,6 @@ class PostController extends Controller
      */
     public function index()
     {
-        // $posts = Post::all();
-        // //dd($posts);
-        // return view('posts',['posts'=>$posts]);
         $posts = Post::where('user_id',Auth::user()->id)->get();
         return view('posts.index')->with('posts',$posts);
     }
@@ -58,15 +55,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
-        //$user = Auth::user()->id;
         $default_image = 'empty.jpg';
         $path = public_path('/images');
         if ($image = $request->file('image_path')) {
             $image_name = time().'.'.$image->getClientOriginalExtension();
             $image->move($path,$image_name);
         };
-        //dd(Auth::user());
         $arr = array(
                 'title'=>$request->post_title,
                 'text'=>$request->post_text,
@@ -108,7 +102,7 @@ class PostController extends Controller
         $categories = Category::get();
         $post = Post::find($id);
         if ($post != null) {
-            return view('posts.edit')->with(['post'=> $post, 'categories'=> $categories]); //, compact('post'))->with('category', $category);
+            return view('posts.edit')->with(['post'=> $post, 'categories'=> $categories]); 
         }
         return redirect()->back()->with('message','Something went wrong');
     }

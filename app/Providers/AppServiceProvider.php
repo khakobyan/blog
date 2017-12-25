@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use App\Category;
 use App\User;
 use App\Post;
+use Laravel\Passport\Passport;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -33,5 +34,6 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        // Passport::ignoreMigrations();
     }
 }

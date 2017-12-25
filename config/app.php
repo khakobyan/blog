@@ -178,7 +178,9 @@ return [
         App\Providers\RouteServiceProvider::class,
         //new
         Collective\Html\HtmlServiceProvider::class,
-        Laravel\Socialite\SocialiteServiceProvider::class
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        Laravel\Passport\PassportServiceProvider::class,
+
 
     ],
 
