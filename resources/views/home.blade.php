@@ -18,8 +18,8 @@
             <div class="panel panel-default all_posts_panel text-center">
             @foreach($posts as $post)
                 <div class="panel panel-default col-sm-4 post-panel">
-                    <div class="panel-heading"><a class="post-titles" href="/post/{{$post->id}}">{{$post->title}}</a></div>
-                    <div class="panel-body"><a href="/post/{{$post->id}}"><img widt="260" height="160" src="{{'images/'.$post->image_path}}"></a>
+                    <div class="panel-heading"><a class="post-titles" href="/posts/{{$post->id}}">{{$post->title}}</a></div>
+                    <div class="panel-body"><a href="/posts/{{$post->id}}"><img widt="260" height="160" src="{{'images/'.$post->image_path}}"></a>
                     </div>
                     <div class="panel-footer">{{$post->category->name}}</div>
                 </div> 

@@ -21,7 +21,7 @@ export default class AddCategory extends Component {
     addCategory(){
         axios.post('/api/me/categories', {'name': this.state.name})
         .then((response) => {
-            this.setState({'new_category': response.data.category});
+            this.setState({'new_category': response.data.resource});
             this.props.addCategory(this.state.new_category);
         }).catch((error) => {
 

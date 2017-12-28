@@ -24,7 +24,7 @@
             </div>
             <div class="modal-footer">
               <div class="col-sm-6">
-              <form action="{{-- {{'post/'.$post->id.'/edit'}} --}}" method="POST" id="edPostForm">
+              <form action="" method="POST" id="edPostForm">
                 {{method_field('GET')}}
                 {{csrf_field()}}
                 <input type="submit" value="EDIT">
@@ -68,7 +68,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
   $('.post-delete').click(function(){
-    $('#delPostForm').attr('action','/post/' + $(this).data('id'));
+    $('#delPostForm').attr('action','/posts/' + $(this).data('id'));
   });
 });
 

@@ -44,7 +44,7 @@ export default class AddPost extends Component {
 
         axios.post('/api/me/posts', data)
         .then((response) => {
-            this.setState({new_post: response.data.added_post});
+            this.setState({new_post: response.data.resource});
             this.props.addPost(this.state.new_post);
         });
     }

@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
-use App\Post;
+use App\{ Category, Post };
 
 class HomeController extends Controller
 {
@@ -27,6 +26,6 @@ class HomeController extends Controller
     {
         $categories = $category->get();
         $posts = $post->get();
-        return view('home')->with(['categories'=>$categories,'posts'=>$posts]);
+        return view('home')->with(['categories' => $categories, 'posts' => $posts]);
     }
 }

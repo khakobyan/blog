@@ -4,10 +4,10 @@
 
 <div class="container">
 	  <h2 class="text-center">{{Auth::user()->name}}'s Posts</h2>
-	  <a href="/post/create" class="btn btn-success btn-sm add_post">CREATE NEW POST</a>
+	  <a href="/posts/create" class="btn btn-success btn-sm add_post">CREATE NEW POST</a>
 	  <ul class="list-group post-list center-block">
   	@foreach($posts as $post)
-    	<li class="list-group-item col-sm-12"><a class="post-titles col-sm-6" href="/post/{{$post->id}}">{{$post->title}}</a>
+    	<li class="list-group-item col-sm-12"><a class="post-titles col-sm-6" href="/posts/{{$post->id}}">{{$post->title}}</a>
     		@if(Auth::user()->id == $post->user_id)
         <div class="col-sm-6">
           <button type="button" data-id="{{$post->id}}" class="btn btn-warning btn-sm post-edit" data-toggle="modal" data-target="#EditPostModal">EDIT</button>
@@ -75,13 +75,13 @@
 <script type="text/javascript">
 $(document).ready(function(){
   $('.post-delete').click(function(){
-    $('#delPostForm').attr('action','/post/' + $(this).data('id'));
+    $('#delPostForm').attr('action','/posts/' + $(this).data('id'));
   });
 });
 
 $(document).ready(function(){
   $('.post-edit').click(function(){
-    $('#edPostForm').attr('action','post/' + $(this).data('id')+'/edit');
+    $('#edPostForm').attr('action','/posts/' + $(this).data('id')+'/edit');
   })
 })
 

@@ -68,9 +68,9 @@ class LoginController extends Controller
             return redirect('home');
         } else {
             $user = new User;
-            $user->name=$SocialUser->name;
-            $user->email=$SocialUser->email;
-            $user->password=bcrypt(str_random(10));
+            $user->name = $SocialUser->name;
+            $user->email = $SocialUser->email;
+            $user->password = bcrypt(str_random(10));
             $user->save();
             Auth::login($user);
             return redirect('home');

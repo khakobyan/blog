@@ -12,7 +12,8 @@ export default class Posts extends Component {
     }
     componentWillMount(){
         axios.get('/api/posts').then((response) => {
-            this.setState({posts: Object.values(response.data)[0]});
+            const posts = response.data.resource;
+            this.setState({posts: posts});
         }).catch((error) => {
 
         })

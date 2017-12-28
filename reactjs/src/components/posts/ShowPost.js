@@ -18,10 +18,10 @@ export default class ShowPost extends Component {
         this.deletePost = this.deletePost.bind(this);
     }
     componentWillMount(){
-        axios.get('/api/posts/' + this.state.post_id)
+        axios.get('/api/me/posts/' + this.state.post_id)
         .then((response) => {
-            let post = response.data.post;
-            this.setState({post:post})
+            let post = response.data.resource;
+            this.setState({post: post})
         }).catch((error) => {
 
         })

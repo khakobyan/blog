@@ -47,8 +47,8 @@ export default class EditPost extends Component {
 
         axios.post('/api/me/posts/' + this.props.id, data)
         .then((response) => {
-            this.setState({new_post: response.data.edited_post});
-            this.props.editPost(response.data.edited_post);
+            this.setState({new_post: response.data.resource});
+            this.props.editPost(response.data.resource);
         })
     }
     componentWillMount() {

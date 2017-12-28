@@ -12,7 +12,8 @@ export default class Categories extends Component {
     }
     componentWillMount(){
         axios.get('/api/categories').then((response) => {
-            this.setState({categories: Object.values(response.data)[0]});
+            const categories = response.data.resource;
+            this.setState({categories: categories});
         }).catch((error) => {
 
         })

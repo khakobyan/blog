@@ -17,7 +17,12 @@ class UsersController extends Controller
         $this->user = $user;
     }
 
-
+    /**
+     * User registration.
+     *
+     * @param  $request
+     * @return json
+     */
     public function register(Request $request)
     {
         $inputs = $request->all();
@@ -26,32 +31,43 @@ class UsersController extends Controller
             'name' => $inputs['name'],
             'email' => $inputs['email'],
             'password' => bcrypt($inputs['password']),
-            'confirmation_code'=>$confirmation_code
+            'confirmation_code' => $confirmation_code
         ]);
         Auth::login($user);
         return response()->json(
-          ['status'=>'success',
+          ['status' => 'success',
           'message' => 'User created successfully',
-          'resourse'=>$user,
-          'user'=>Auth::user()], 200
+          'resourse' => $user,
+          'user' => Auth::user()], 200
         );
     }
 
+    /**
+     * User login
+     *
+     * @param $request
+     * @return mixed
+     */
     public function login(Request $request)
     {
         if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
             $user = Auth::user();
             $success['token'] =  $user->createToken('MyApp')->accessToken;
-            return response()->json(['success' => $success, "user"=>$user], $this->successStatus);
+            return response()->json(['success' => $success, 'user' => $user], $this->successStatus);
         }
         else{
-            return response()->json(['error'=>'Unauthorised'], 401);
+            return response()->json(['error' => 'Unauthorised'], 401);
         }
     }
 
+    /**
+     * User logout.
+     *
+     * @return json
+     */
     public function logout(){
         Auth::logout();
-        return response()->json(['message' => "403"], 200);
+        return response()->json(['message' => 'success']);
     }
 
 

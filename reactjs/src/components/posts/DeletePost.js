@@ -16,7 +16,7 @@ export default class DeletePost extends Component {
     deletePost() {
         axios.delete('/api/me/posts/' + this.props.id)
         .then((response) => {
-            this.props.deletePost(response.data.deleted_post_id);
+            this.props.deletePost(response.data.resource);
         }).catch((error) => {
 
         })

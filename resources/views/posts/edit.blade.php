@@ -2,16 +2,16 @@
 
 @section('content')
 <div class="container col-sm-8 post-edit-blade">
-<form  method="POST" action="/post/{{$post->id}}" enctype="multipart/form-data">
+<form  method="POST" action="/posts/{{$post->id}}" enctype="multipart/form-data">
 	{{method_field('PUT')}}
 	{{ csrf_field() }} 
 	<div class="form-group">
 		<label for="postTitle">Post Title</label>
-		<input type="text" class="form-control" id="postTitle" placeholder="Title" value="{{$post->title}}" required name="post_title">
+		<input type="text" class="form-control" id="postTitle" placeholder="Title" value="{{$post->title}}" required name="title">
 	</div>
 	<div class="form-group">
 		<label for="postText">Text</label>
-		<textarea maxlength="255" class="form-control" id="postText" rows="6" name="post_text" required>{{$post->text}}</textarea>
+		<textarea maxlength="255" class="form-control" id="postText" rows="6" name="text" required>{{$post->text}}</textarea>
 	</div>
 	<div class="form-group">
 		<label></label>
@@ -19,11 +19,11 @@
 	</div>
 	<div class="form-group">
 		<label for="postImage">File Input</label>
-		<input type="file" class="form-control-file" id="postImage" name="post_image">
+		<input type="file" class="form-control-file" id="postImage" name="image_path">
 	</div>
 	<div class="form-group">
 		<label for="postCategory">Select Category</label>
-		<select  class="form-control" id="postCategory" name="post_category">
+		<select  class="form-control" id="postCategory" name="category_id">
 			@foreach($categories as $category)
 				<option value="{{$category->id}}">
 					{{$category->name}}

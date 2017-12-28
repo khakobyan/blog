@@ -61,11 +61,11 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="/post">My Posts</a>
-                                        <a href="/category">My Categories</a>
+                                        <a href="/posts">My Posts</a>
+                                        <a href="/categories">My Categories</a>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
 

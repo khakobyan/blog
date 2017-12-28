@@ -16,10 +16,11 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/category','CategoryController');
-Route::resource('/post','PostController');
+Route::resource('/categories','CategoriesController');
+Route::resource('/posts','PostsController');
+
+
 
 Route::get('auth/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('auth/facebook/callback', 'Auth\LoginController@handleProviderCallback');

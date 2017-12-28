@@ -6,16 +6,17 @@
   <h2 class="text-center">{{Auth::user()->name}}'s Categories</h2>
     <button type="button" class="btn btn-success btn-sm add" data-toggle="modal" data-target="#myModal">ADD NEW CATEGORY</button>
   <ul class="list-group  center-block category-list">
-  	@foreach($categories as $category)
-    	<li class="list-group-item col-sm-12"><div class="col-sm-6">{{$category->name}}</div>
-    	 @if(Auth::user()->id == $category->user_id)
-                  <div class="col-sm-6">
-                   <button type="button" data-id="{{$category->id}}" class="btn btn-warning btn-sm category-edit" data-toggle="modal" data-target="#EditCategoryModal">EDIT
+    @foreach($categories as $category)
+        <li class="list-group-item col-sm-12"><div class="col-sm-6">{{$category->name}}</div>
+            @if(Auth::user()->id == $category->user_id)
+                <div class="col-sm-6">
+                    <button type="button" data-id="{{$category->id}}" class="btn btn-warning btn-sm category-edit" data-toggle="modal" data-target="#EditCategoryModal">EDIT
                     </button>
                     <button type="button" data-id="{{$category->id}}" class="btn btn-danger btn-sm category-delete" data-toggle="modal" data-target="#DeleteCategoryModal">DELETE
                     </button>
-                  </div>  
-                  @endif</li>
+                </div>  
+            @endif
+        </li>
     @endforeach
   </ul>
 </div>
@@ -28,7 +29,7 @@
           <h4 class="modal-title">Write Category Name</h4>
         </div>
         <div class="modal-body">
-          <form method="POST" action="/category"> 
+          <form method="POST" action="/categories"> 
             {{ csrf_field() }} 
             <input type="text" class="form-control" name="name" autofocus>
             <div class="modal-footer">
@@ -92,16 +93,15 @@
 
   <!--category edit/delete-->
     <script type="text/javascript">
-    	$(document).ready(function(){
+        $(document).ready(function(){
   $('.category-delete').click(function(){
-    //console.log($(this).data('id'));
-    $('#delCatForm').attr('action','/category/' + $(this).data('id'));
+    $('#delCatForm').attr('action','/categories/' + $(this).data('id'));
   });
 })
 
 $(document).ready(function(){
   $('.category-edit').click(function(){
-    $('#edCatForm').attr('action','/category/' + $(this).data('id'));
+    $('#edCatForm').attr('action','/categories/' + $(this).data('id'));
     $('#inp').attr('value','');
   });
 });
