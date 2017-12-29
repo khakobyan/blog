@@ -7,12 +7,9 @@ use App\Services\CategoryService;
 
 class CategoriesController extends Controller
 {
-    protected $categoryService;    
-
-    public function __construct(CategoryService $categoryService)
+    public function __construct()
     {
         $this->middleware('auth');
-        $this->categoryService = $categoryService;
     }
 
     /**
@@ -20,12 +17,12 @@ class CategoriesController extends Controller
      *
      * @return json
      */
-    public function allCategories()
+    public function allCategories(CategoryService $categoryService)
     {
-        $categories = $this->categoryService->all();
+        $categories = $categoryService->all();
         return response()->json(
            ['status' => 'success',
             'message' => 'Get all categories',
-           	'resource' => $categories]);
+            'resource' => $categories]);
     }
 }

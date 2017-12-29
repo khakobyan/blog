@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PostRequest;
 use App\Services\{ CategoryService, PostService };
-use Auth;
 
 class PostsController extends Controller
 {

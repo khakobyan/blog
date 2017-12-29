@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Api;
 use App\Http\Requests\PostRequest;
 use App\Http\Controllers\Controller;
 use App\Services\PostService;
-use Auth;
 
 class UserPostsController extends Controller
 {
@@ -15,7 +14,6 @@ class UserPostsController extends Controller
     {
         $this->middleware('auth');
         $this->postService = $postService;
-
     }
 
     /**

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CategoryRequest;
 use App\Services\CategoryService;
-use Auth;
 
 class CategoriesController extends Controller
 {

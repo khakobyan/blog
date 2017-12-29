@@ -3896,7 +3896,7 @@ var EditPost = function (_Component) {
 
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/categories').then(function (response) {
                 _this3.setState({
-                    show_categories: response.data.categories
+                    show_categories: response.data.resource
                 });
             });
         }
@@ -26794,7 +26794,7 @@ var AddPost = function (_Component) {
 
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/api/categories').then(function (response) {
                 _this3.setState({
-                    show_categories: response.data.categories
+                    show_categories: response.data.resource
                 });
             });
         }

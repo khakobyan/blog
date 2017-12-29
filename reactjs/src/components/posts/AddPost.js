@@ -51,7 +51,7 @@ export default class AddPost extends Component {
     componentWillMount() {
         axios.get('/api/categories').then((response) => {
             this.setState({
-                show_categories: response.data.categories
+                show_categories: response.data.resource
             })
         })
     }

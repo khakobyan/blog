@@ -7,12 +7,9 @@ use App\Services\PostService;
 
 class PostsController extends Controller
 {
-	protected $postService;
-
-    public function __construct(PostService $postService)
+    public function __construct()
     {
         $this->middleware('auth');
-        $this->postService = $postService;
     }
 
     /**
@@ -20,9 +17,9 @@ class PostsController extends Controller
      *
      * @return json
      */
-    public function allPosts()
+    public function allPosts(PostService $postService)
     {
-    	$all_posts = $this->postService->getAllPosts();
+    	$all_posts = $postService->getAllPosts();
         return response()->json(
            ['status' => 'success',
             'message' => 'get all posts',
