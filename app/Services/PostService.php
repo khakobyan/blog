@@ -72,4 +72,3 @@ class PostService
   		$this->posts->where('id', $id)->delete();
   	}
 }
-
