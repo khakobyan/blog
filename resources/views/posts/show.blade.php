@@ -2,13 +2,13 @@
 
 @section('content')
 <div class="container-fluid text-center">
-	<div class="jumbotron"><h2>{{$post->title}}</h2></div>
-	<img class="img-rounded"  width="800px" src="{{url('images/'.$post->image_path)}}" alt="{{$post->image_path}}">
-	<h4>{{$post->text}}</h4>
+    <div class="jumbotron"><h2>{{$post->title}}</h2></div>
+    <img class="img-rounded"  width="800px" src="{{url('images/'.$post->image_path)}}" alt="{{$post->image_path}}">
+    <h4>{{$post->text}}</h4>
 </div>
 <div class="container-fluid well">
-	@if(Auth::user()->id == $post->user_id)
-	<button type="button" data-id="{{$post->id}}" class="btn btn-warning btn-sm post-edit" data-toggle="modal" data-target="#EditPostModal">EDIT</button>
+    @if(Auth::user()->id == $post->user_id)
+    <button type="button" data-id="{{$post->id}}" class="btn btn-warning btn-sm post-edit" data-toggle="modal" data-target="#EditPostModal">EDIT</button>
     <button type="button" data-id="{{$post->id}}" class="btn btn-danger btn-sm post-delete" data-toggle="modal" data-target="#DeletePostModal">DELETE</button>
     @endif
 </div>

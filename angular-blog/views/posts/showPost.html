@@ -1,0 +1,15 @@
+<div class="container-fluid text-center">
+    <div class="jumbotron"><h2>{{post.title}}</h2></div>
+    <img class="img-rounded"  width="800px" src="{{'/images/' + post.image_path}}" alt="{{post.image_path}}">
+    <h4>{{post.text}}</h4>
+    <div class="container well">
+        <div ng-show=" post.user.id == userId ">
+            <button type="button" data-id="{{post.id}}" class="btn btn-warning btn-sm category-edit"><a href="#!me/posts/{{post.id}}">EDIT</a>
+            </button>
+            <button type="button" class="btn btn-danger btn-sm category-delete" data-id="{{post.id}}" ng-click ="deletePost(post.id)">DELETE
+            </button>
+        </div>
+    </div>
+</div>
+
+

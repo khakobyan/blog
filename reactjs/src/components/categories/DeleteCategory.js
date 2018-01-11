@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {Redirect} from 'react-router';
-import { HashRouter,Route, Link } from 'react-router-dom';
+import { HashRouter, Route, Link } from 'react-router-dom';
 import DeleteCategoryButton from '../modals/DeleteCategoryButton';
 import PropTypes from 'prop-types';
 

@@ -61,11 +61,11 @@
                             </div>
                         </div>
                         <hr>
-    <div class="form-group">
-        <div class="col-md-6 col-md-offset-9">
-            <a href="auth/facebook" class="btn btn-facebook btn-primary">Facebook Login</a>
-        </div>
-    </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-9">
+                                <a href="auth/facebook" class="btn btn-facebook btn-primary">Facebook Login</a>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

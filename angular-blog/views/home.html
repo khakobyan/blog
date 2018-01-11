@@ -1,0 +1,23 @@
+<div ng-show='checkAuth()' ng-controller="HomeController">
+    <div class="container-fluid col-sm-3" >
+        <div class="row">
+            <h2 class="text-center">Categories</h2>
+            <ul class="list-group" ng-init="allCategories">
+                <li class="list-group-item text-center" ng-repeat="category in allCategories">{{category.name}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid col-sm-8">
+        <div class="row">
+            <h2 class="text-center">Posts</h2>
+            <div class="panel panel-default all_posts_panel text-center" ng-init="allPosts">
+                <div class="panel panel-default col-sm-4 post-panel" ng-repeat="post in allPosts">
+                    <div class="panel-heading"><a class="post-titles" href="#!posts/{{post.id}}">{{post.title}}</a></div>
+                    <div class="panel-body"><a href="#!posts/{{post.id}}"><img widt="260" height="160" src="{{'/images/' + post.image_path}}"></a>
+                    </div>
+                    <div class="panel-footer"> {{post.category.name}} </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>

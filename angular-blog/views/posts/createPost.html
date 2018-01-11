@@ -1,0 +1,25 @@
+<div class="container">
+    <form enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="postTitle">Post Title</label>
+            <input type="text" class="form-control" placeholder="Title" name="title" ng-model="title" required>
+        </div>
+        <div class="form-group">
+            <label for="postText">Text</label>
+            <textarea class="form-control" id="postText" rows="6" name="text" ng-model="text" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="postImage">File Input</label>
+            <input type="file" class="form-control-file" name="image_path" file-model="image">
+        </div>
+        <div class="form-group">
+            <label for="postCategory">Select Category</label>
+            <select  class="form-control" name="category_id" ng-model="category.id">
+                <option ng-repeat="category in allCategories" value="{{category.id}}">
+                    {{category.name}}
+                </option>
+            </select>   
+        </div>
+        <button type="submit" class="btn btn-primary" ng-click="addPost()">Share</button>
+    </form>
+</div>
