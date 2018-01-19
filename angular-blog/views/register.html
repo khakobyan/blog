@@ -11,12 +11,9 @@
 
                             <div class="col-md-6">
                                 <input ng-model="inputs.name"  id="name" type="text" class="form-control" required autofocus>
-
-                                <!-- @if ($errors->has('name'))-->
-                                    <span class="help-block" ng-if="errors.name">
-                                        <strong style="color:red">{{ errors.name[0] }}</strong>
-                                    </span>
-                                <!-- @endif -->
+                                <span class="help-block" ng-if="errors.name">
+                                    <strong style="color:red">{{ errors.name[0] }}</strong>
+                                </span>
                             </div>
                         </div>
 
@@ -25,12 +22,9 @@
 
                             <div class="col-md-6">
                                 <input ng-model="inputs.email" id="email" type="email" class="form-control" required autofocus>
-
-                                <!-- @if ($errors->has('email')) -->
                                     <span class="help-block" ng-if="errors.email">
                                         <strong style="color:red">{{ errors.email[0] }}</strong>
                                     </span>
-                                <!--@endif -->
                             </div>
                         </div>
 
@@ -39,12 +33,9 @@
 
                             <div class="col-md-6">
                                 <input ng-model="inputs.password" id="password" type="password" class="form-control" required autofocus>
-
-                                <!-- @if ($errors->has('password'))-->
-                                    <span class="help-block" ng-if='errors.password'>
-                                        <strong  style="color:red">{{ errors.password[0] }}</strong>
-                                    </span>
-                                <!--@endif -->
+                                <span class="help-block" ng-if='errors.password'>
+                                    <strong  style="color:red">{{ errors.password[0] }}</strong>
+                                </span>
                             </div>
                         </div>
 

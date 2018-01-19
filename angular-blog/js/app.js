@@ -6,7 +6,7 @@ app.run(['$rootScope', '$state', function($rootScope, $state){
         $rootScope.count_user=localStorage['count_user'];
         $rootScope.count_post=localStorage['count_post'];
         $rootScope.count_category=localStorage['count_category'];
-    $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState) {
+        $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState) {
     	if($rootScope.loggedIn && toState.data.guest) {
     		e.preventDefault();
     		$state.go('home', {}, {reload: true});
@@ -16,6 +16,5 @@ app.run(['$rootScope', '$state', function($rootScope, $state){
     		$state.go('login', {}, {reload: true});
     		return false;
     	} 
-
     });
 }])

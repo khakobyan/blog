@@ -1,22 +1,16 @@
 angular.module('myApp').controller('CategoriesController',
     ['$scope', '$http', '$state','$location', '$rootScope', '$stateParams',function($scope, $http, $state, $location, $rootScope,$stateParams) {
-    	
         init();
-        // initial function
         function init() {
             switch ($state.current.name) {
-
                 case "me/categories"   : userCategories(); break;
-                // case "categories"      : categories(); break;
-                // case "me/categories/:id"        : updateCategory(); break;
                 case "spec_posts"      : specPosts(); break;
             }
         }
         
         function userCategories() {
             $http.get('/api/me/categories')
-            .then(
-                function(response) {
+            .then(function(response) {
                 var data = response.data.resource;
                 $scope.userCategories = data;
             })
