@@ -1,71 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Angular Blog</title>
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <script src="assets/libs/jquery.min.js"></script>
-        <script src="assets/libs/bootstrap.min.js"></script>
-        <script src="assets/libs/angular.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
-        <script src="app/app.js"></script>
-        <script src="app/controllers.js"></script>
-    </head>
-    <body ng-app="myApp" id='App' ng-controller="appController">
-        <div id="app">
-            <nav class="navbar navbar-default navbar-static-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <!-- Collapsed Hamburger -->
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                            <span class="sr-only">Toggle Navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
+<html>
+  <head>
+    <title>Angular JS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script type="text/javascript" src="js/ng-file-upload/ng-file-upload.min.js"></script> -->
 
-                        <!-- Branding Image -->
-                        <a class="navbar-brand" href="#">
-                            Angular Blog
-                        </a>
-                    </div>
+    <!-- Modules -->
+    <script src='js/app.js' type="text/javascript"></script>
+    <script src='js/config.js' type="text/javascript"></script>
+    <script type="text/javascript" src="js/ng-file-upload/ng-file-upload.min.js"></script>
 
-                    <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                        <!-- Left Side Of Navbar -->
-                        <ul class="nav navbar-nav">
-                            &nbsp;
-                        </ul>
+    <!-- Controllers -->
+    <script src='js/controllers/PostsController.js' type="text/javascript"></script>
+    <script src='js/controllers/LoginController.js' type="text/javascript"></script>
+    <script src='js/controllers/RegisterController.js' type="text/javascript"></script>
+    <script src='js/controllers/HomeController.js' type="text/javascript"></script>
+    <script src='js/controllers/CategoriesController.js' type="text/javascript"></script>
 
-                        <!-- Right Side Of Navbar -->
-                        <ul ng-show='checkGuest()' class="nav navbar-nav navbar-right">
-                            <!-- Authentication Links -->
-                            <li><a href="#!login">Login</a></li>
-                            <li><a href="#!register">Register</a></li>
-                        </ul>
-                        <ul ng-show='checkAuth()' class="nav navbar-nav navbar-right">
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{userName}} <span class="caret"></span>
-                                </a>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body ng-app="myApp">
+       <div id="app">
+        <nav class="navbar navbar-default navbar-static-top" id='navbar'>
+            <div class="container">
+                <div class="navbar-header">
 
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="#!me/categories">My categories</a>
-                                    </li>
-                                    <li>
-                                        <a href="#!me/posts">My Posts</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" ng-click='logout()'>Logout</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+                    <!-- Collapsed Hamburger -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <!-- Branding Image -->
+                    <a class="navbar-brand" ui-sref="home">
+                        AngBLOG
+                    </a>
                 </div>
-            </nav>
-        </div>
-        <div ng-view></div>
-        <br>
-    </body>
+
+                <div class="collapse navbar-collapse" >
+                    
+                    <ul class="nav navbar-nav">
+                        &nbsp;
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" ng-controller="LoginController">
+                        <li ng-hide="loggedIn" ><a  ui-sref="login">Login</a></li>
+                        <li ng-hide="loggedIn"><a ui-sref="register">Register</a></li>
+                        <li ng-show="loggedIn" > 
+                            <a ui-sref="me/posts" >My Posts</a>  
+                        </li>
+                        <li ng-show="loggedIn" > 
+                            <a ui-sref="me/categories" >My Categories</a>  
+                        </li>
+                        <li ng-show="loggedIn" > 
+                            <a ng-click="logout()" ui-sref="login" >Logout</a>  
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+       
+      <ui-view></ui-view>
+     </div>
+    
+    <script src='js/log_reg.js' type="text/javascript"></script>
+</body>
 </html>

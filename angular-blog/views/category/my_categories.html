@@ -1,11 +1,13 @@
-<div class="container" ng-controller="UserCategoriesController">
+<div class="container" ng-controller="CategoriesController">
     <h2 class="text-center">My Categories</h2>
     <button type="button" class="btn btn-success btn-sm add center-block" data-toggle="modal" data-target="#myModal">ADD NEW CATEGORY</button><br>
     <ul class="list-group  center-block category-list" ng-init="userCategories">
         <li class="list-group-item col-sm-12" ng-repeat="category in userCategories"><div class="col-sm-6">{{category.name}}</div>
             <div class="col-sm-6">
-                <button type="button" data-id="{{category.id}}" class="btn btn-warning btn-sm category-edit"><a href="#!me/categories/{{category.id}}">EDIT</a>
-                </button>
+                <a href="#me/categories/{{category.id}}">
+                    <button type="button" data-id="{{category.id}}" class="btn btn-warning btn-sm category-edit">EDIT
+                    </button>
+                </a>
                 <button type="button" class="btn btn-danger btn-sm category-delete" data-id="{{category.id}}" ng-click="deleteCategory(category.id)">DELETE
                 </button>
             </div>  

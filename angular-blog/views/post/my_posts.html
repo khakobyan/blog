@@ -1,0 +1,15 @@
+<div class="container" >
+    <h2 class="text-center">My Posts</h2>
+    <button type="button" class="btn btn-success btn-sm center-block" ui-sref="me/posts/create">CREATE NEW POST</button><br>
+    <ul class="list-group  center-block category-list" ng-init="userPosts">
+        <li class="list-group-item col-sm-12" ng-repeat="post in userPosts"><div class="col-sm-6"><a ui-sref="posts/{{post.id}}">{{post.title}}</a></div>
+            <div class="col-sm-6">
+                <button type="button" data-id="{{post.id}}" class="btn btn-warning btn-sm category-edit" ui-sref="me/posts/{{post.id}}">EDIT</a>
+                </button>
+                <button type="button" class="btn btn-danger btn-sm category-delete" data-id="{{post.id}}" ng-click ="deletePost(post.id)">DELETE
+                </button>
+            </div>  
+        </li>
+    </ul>
+</div>
+        
